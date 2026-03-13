@@ -1,0 +1,20 @@
+[
+  {
+    "name": "modern_house_01",
+    "category": "house",
+    "dimensions": {
+      "width": 10,
+      "height": 6,
+      "depth": 8
+    },
+    "blocks": [
+      {
+        "x": 9,
+        "y": 1,
+        "z": 14,
+        "mat_id": "17",
+        "name": "Oak Wood"
+      }
+    ]
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "host": "localhost",
+  "port": 25565,
+  "username": "BuilderBot",
+  "version": "1.21.1",
+  "owner": "jhonny",
+  "aiServerUrl": "http://localhost:5000"
+}

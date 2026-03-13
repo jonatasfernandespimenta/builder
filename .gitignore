@@ -1,0 +1,29 @@
+builder-mod/
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store
+nvim-macos-x86_64.tar.gz
+
+# Model checkpoints and trained models (too large for git)
+builderai/models/
+builderai/checkpoint/
+builderai/logs/
+
+# Generation test output
+builder-bot/generation.json
+
+# Minecraft server (binary files, world data, jars)
+mc-server/builder-world/
+mc-server/libraries/
+mc-server/versions/
+mc-server/logs/
+mc-server/server.jar
+mc-server/usercache.json
+mc-server/banned-ips.json
+mc-server/banned-players.json
+mc-server/ops.json
+mc-server/whitelist.json
+
+# Scrapper data (large)
+grabcraft-scrapper/

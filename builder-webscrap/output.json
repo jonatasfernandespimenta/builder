@@ -1,0 +1,2928 @@
+[
+  {
+    "x": 2,
+    "y": 1,
+    "z": 2,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 2,
+    "y": 1,
+    "z": 3,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 2,
+    "y": 1,
+    "z": 4,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 2,
+    "y": 1,
+    "z": 5,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 2,
+    "y": 1,
+    "z": 6,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 2,
+    "y": 1,
+    "z": 7,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 2,
+    "y": 1,
+    "z": 8,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 2,
+    "y": 1,
+    "z": 9,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 2,
+    "y": 1,
+    "z": 10,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 2,
+    "y": 1,
+    "z": 11,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 2,
+    "y": 1,
+    "z": 12,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 2,
+    "y": 1,
+    "z": 13,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 2,
+    "y": 1,
+    "z": 14,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 3,
+    "y": 1,
+    "z": 14,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 4,
+    "y": 1,
+    "z": 3,
+    "mat_id": "915",
+    "name": "Cauldron (Fully Filled)"
+  },
+  {
+    "x": 4,
+    "y": 1,
+    "z": 5,
+    "mat_id": "183",
+    "name": "Stone Brick Stairs (East)"
+  },
+  {
+    "x": 4,
+    "y": 1,
+    "z": 6,
+    "mat_id": "351",
+    "name": "Stone Brick Stairs (West)"
+  },
+  {
+    "x": 4,
+    "y": 1,
+    "z": 14,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 5,
+    "y": 1,
+    "z": 8,
+    "mat_id": "115",
+    "name": "Cobblestone Stairs (East, Normal)"
+  },
+  {
+    "x": 5,
+    "y": 1,
+    "z": 9,
+    "mat_id": "4",
+    "name": "Cobblestone"
+  },
+  {
+    "x": 5,
+    "y": 1,
+    "z": 10,
+    "mat_id": "4",
+    "name": "Cobblestone"
+  },
+  {
+    "x": 5,
+    "y": 1,
+    "z": 11,
+    "mat_id": "4",
+    "name": "Cobblestone"
+  },
+  {
+    "x": 5,
+    "y": 1,
+    "z": 14,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 6,
+    "y": 1,
+    "z": 8,
+    "mat_id": "115",
+    "name": "Cobblestone Stairs (East, Normal)"
+  },
+  {
+    "x": 6,
+    "y": 1,
+    "z": 9,
+    "mat_id": "4",
+    "name": "Cobblestone"
+  },
+  {
+    "x": 6,
+    "y": 1,
+    "z": 11,
+    "mat_id": "4",
+    "name": "Cobblestone"
+  },
+  {
+    "x": 6,
+    "y": 1,
+    "z": 14,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 7,
+    "y": 1,
+    "z": 8,
+    "mat_id": "115",
+    "name": "Cobblestone Stairs (East, Normal)"
+  },
+  {
+    "x": 7,
+    "y": 1,
+    "z": 9,
+    "mat_id": "4",
+    "name": "Cobblestone"
+  },
+  {
+    "x": 7,
+    "y": 1,
+    "z": 10,
+    "mat_id": "4",
+    "name": "Cobblestone"
+  },
+  {
+    "x": 7,
+    "y": 1,
+    "z": 11,
+    "mat_id": "4",
+    "name": "Cobblestone"
+  },
+  {
+    "x": 7,
+    "y": 1,
+    "z": 14,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 8,
+    "y": 1,
+    "z": 14,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 9,
+    "y": 1,
+    "z": 5,
+    "mat_id": "496",
+    "name": "Cobblestone (Upper)"
+  },
+  {
+    "x": 9,
+    "y": 1,
+    "z": 6,
+    "mat_id": "496",
+    "name": "Cobblestone (Upper)"
+  },
+  {
+    "x": 9,
+    "y": 1,
+    "z": 7,
+    "mat_id": "496",
+    "name": "Cobblestone (Upper)"
+  },
+  {
+    "x": 9,
+    "y": 1,
+    "z": 14,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 10,
+    "y": 1,
+    "z": 2,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 10,
+    "y": 1,
+    "z": 3,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 10,
+    "y": 1,
+    "z": 4,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 10,
+    "y": 1,
+    "z": 5,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 10,
+    "y": 1,
+    "z": 6,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 10,
+    "y": 1,
+    "z": 7,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 10,
+    "y": 1,
+    "z": 8,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 10,
+    "y": 1,
+    "z": 9,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 10,
+    "y": 1,
+    "z": 10,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 10,
+    "y": 1,
+    "z": 11,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 10,
+    "y": 1,
+    "z": 12,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 10,
+    "y": 1,
+    "z": 13,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 10,
+    "y": 1,
+    "z": 14,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 2,
+    "y": 2,
+    "z": 2,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 2,
+    "y": 2,
+    "z": 3,
+    "mat_id": "85",
+    "name": "Oak Fence"
+  },
+  {
+    "x": 2,
+    "y": 2,
+    "z": 4,
+    "mat_id": "85",
+    "name": "Oak Fence"
+  },
+  {
+    "x": 2,
+    "y": 2,
+    "z": 5,
+    "mat_id": "85",
+    "name": "Oak Fence"
+  },
+  {
+    "x": 2,
+    "y": 2,
+    "z": 6,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 2,
+    "y": 2,
+    "z": 7,
+    "mat_id": "85",
+    "name": "Oak Fence"
+  },
+  {
+    "x": 2,
+    "y": 2,
+    "z": 8,
+    "mat_id": "85",
+    "name": "Oak Fence"
+  },
+  {
+    "x": 2,
+    "y": 2,
+    "z": 9,
+    "mat_id": "85",
+    "name": "Oak Fence"
+  },
+  {
+    "x": 2,
+    "y": 2,
+    "z": 10,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 2,
+    "y": 2,
+    "z": 11,
+    "mat_id": "85",
+    "name": "Oak Fence"
+  },
+  {
+    "x": 2,
+    "y": 2,
+    "z": 12,
+    "mat_id": "85",
+    "name": "Oak Fence"
+  },
+  {
+    "x": 2,
+    "y": 2,
+    "z": 13,
+    "mat_id": "85",
+    "name": "Oak Fence"
+  },
+  {
+    "x": 2,
+    "y": 2,
+    "z": 14,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 3,
+    "y": 2,
+    "z": 14,
+    "mat_id": "85",
+    "name": "Oak Fence"
+  },
+  {
+    "x": 4,
+    "y": 2,
+    "z": 5,
+    "mat_id": "44",
+    "name": "Stone Slab"
+  },
+  {
+    "x": 4,
+    "y": 2,
+    "z": 6,
+    "mat_id": "44",
+    "name": "Stone Slab"
+  },
+  {
+    "x": 4,
+    "y": 2,
+    "z": 14,
+    "mat_id": "85",
+    "name": "Oak Fence"
+  },
+  {
+    "x": 5,
+    "y": 2,
+    "z": 9,
+    "mat_id": "115",
+    "name": "Cobblestone Stairs (East, Normal)"
+  },
+  {
+    "x": 5,
+    "y": 2,
+    "z": 10,
+    "mat_id": "4",
+    "name": "Cobblestone"
+  },
+  {
+    "x": 5,
+    "y": 2,
+    "z": 11,
+    "mat_id": "4",
+    "name": "Cobblestone"
+  },
+  {
+    "x": 5,
+    "y": 2,
+    "z": 14,
+    "mat_id": "85",
+    "name": "Oak Fence"
+  },
+  {
+    "x": 6,
+    "y": 2,
+    "z": 11,
+    "mat_id": "4",
+    "name": "Cobblestone"
+  },
+  {
+    "x": 6,
+    "y": 2,
+    "z": 14,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 7,
+    "y": 2,
+    "z": 9,
+    "mat_id": "115",
+    "name": "Cobblestone Stairs (East, Normal)"
+  },
+  {
+    "x": 7,
+    "y": 2,
+    "z": 10,
+    "mat_id": "4",
+    "name": "Cobblestone"
+  },
+  {
+    "x": 7,
+    "y": 2,
+    "z": 11,
+    "mat_id": "4",
+    "name": "Cobblestone"
+  },
+  {
+    "x": 7,
+    "y": 2,
+    "z": 14,
+    "mat_id": "85",
+    "name": "Oak Fence"
+  },
+  {
+    "x": 8,
+    "y": 2,
+    "z": 14,
+    "mat_id": "85",
+    "name": "Oak Fence"
+  },
+  {
+    "x": 9,
+    "y": 2,
+    "z": 5,
+    "mat_id": "85",
+    "name": "Oak Fence"
+  },
+  {
+    "x": 9,
+    "y": 2,
+    "z": 6,
+    "mat_id": "85",
+    "name": "Oak Fence"
+  },
+  {
+    "x": 9,
+    "y": 2,
+    "z": 7,
+    "mat_id": "85",
+    "name": "Oak Fence"
+  },
+  {
+    "x": 9,
+    "y": 2,
+    "z": 14,
+    "mat_id": "85",
+    "name": "Oak Fence"
+  },
+  {
+    "x": 10,
+    "y": 2,
+    "z": 2,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 10,
+    "y": 2,
+    "z": 3,
+    "mat_id": "85",
+    "name": "Oak Fence"
+  },
+  {
+    "x": 10,
+    "y": 2,
+    "z": 4,
+    "mat_id": "85",
+    "name": "Oak Fence"
+  },
+  {
+    "x": 10,
+    "y": 2,
+    "z": 5,
+    "mat_id": "85",
+    "name": "Oak Fence"
+  },
+  {
+    "x": 10,
+    "y": 2,
+    "z": 6,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 10,
+    "y": 2,
+    "z": 7,
+    "mat_id": "85",
+    "name": "Oak Fence"
+  },
+  {
+    "x": 10,
+    "y": 2,
+    "z": 8,
+    "mat_id": "85",
+    "name": "Oak Fence"
+  },
+  {
+    "x": 10,
+    "y": 2,
+    "z": 9,
+    "mat_id": "85",
+    "name": "Oak Fence"
+  },
+  {
+    "x": 10,
+    "y": 2,
+    "z": 10,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 10,
+    "y": 2,
+    "z": 11,
+    "mat_id": "85",
+    "name": "Oak Fence"
+  },
+  {
+    "x": 10,
+    "y": 2,
+    "z": 12,
+    "mat_id": "85",
+    "name": "Oak Fence"
+  },
+  {
+    "x": 10,
+    "y": 2,
+    "z": 13,
+    "mat_id": "85",
+    "name": "Oak Fence"
+  },
+  {
+    "x": 10,
+    "y": 2,
+    "z": 14,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 2,
+    "y": 3,
+    "z": 2,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 2,
+    "y": 3,
+    "z": 6,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 2,
+    "y": 3,
+    "z": 10,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 2,
+    "y": 3,
+    "z": 14,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 5,
+    "y": 3,
+    "z": 9,
+    "mat_id": "115",
+    "name": "Cobblestone Stairs (East, Normal)"
+  },
+  {
+    "x": 5,
+    "y": 3,
+    "z": 10,
+    "mat_id": "315",
+    "name": "Cobblestone Stairs (North, Normal)"
+  },
+  {
+    "x": 5,
+    "y": 3,
+    "z": 11,
+    "mat_id": "4",
+    "name": "Cobblestone"
+  },
+  {
+    "x": 6,
+    "y": 3,
+    "z": 9,
+    "mat_id": "115",
+    "name": "Cobblestone Stairs (East, Normal)"
+  },
+  {
+    "x": 6,
+    "y": 3,
+    "z": 11,
+    "mat_id": "4",
+    "name": "Cobblestone"
+  },
+  {
+    "x": 6,
+    "y": 3,
+    "z": 14,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 7,
+    "y": 3,
+    "z": 9,
+    "mat_id": "115",
+    "name": "Cobblestone Stairs (East, Normal)"
+  },
+  {
+    "x": 7,
+    "y": 3,
+    "z": 10,
+    "mat_id": "314",
+    "name": "Cobblestone Stairs (South, Normal)"
+  },
+  {
+    "x": 7,
+    "y": 3,
+    "z": 11,
+    "mat_id": "4",
+    "name": "Cobblestone"
+  },
+  {
+    "x": 10,
+    "y": 3,
+    "z": 2,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 10,
+    "y": 3,
+    "z": 6,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 10,
+    "y": 3,
+    "z": 10,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 10,
+    "y": 3,
+    "z": 14,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 2,
+    "y": 4,
+    "z": 2,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 2,
+    "y": 4,
+    "z": 6,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 2,
+    "y": 4,
+    "z": 10,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 2,
+    "y": 4,
+    "z": 14,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 3,
+    "y": 4,
+    "z": 6,
+    "mat_id": "449",
+    "name": "Torch (Facing North)"
+  },
+  {
+    "x": 3,
+    "y": 4,
+    "z": 10,
+    "mat_id": "449",
+    "name": "Torch (Facing North)"
+  },
+  {
+    "x": 5,
+    "y": 4,
+    "z": 9,
+    "mat_id": "44:3",
+    "name": "Cobblestone Slab"
+  },
+  {
+    "x": 5,
+    "y": 4,
+    "z": 10,
+    "mat_id": "315",
+    "name": "Cobblestone Stairs (North, Normal)"
+  },
+  {
+    "x": 5,
+    "y": 4,
+    "z": 11,
+    "mat_id": "4",
+    "name": "Cobblestone"
+  },
+  {
+    "x": 6,
+    "y": 4,
+    "z": 9,
+    "mat_id": "115",
+    "name": "Cobblestone Stairs (East, Normal)"
+  },
+  {
+    "x": 6,
+    "y": 4,
+    "z": 11,
+    "mat_id": "4",
+    "name": "Cobblestone"
+  },
+  {
+    "x": 6,
+    "y": 4,
+    "z": 14,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 7,
+    "y": 4,
+    "z": 9,
+    "mat_id": "44:3",
+    "name": "Cobblestone Slab"
+  },
+  {
+    "x": 7,
+    "y": 4,
+    "z": 10,
+    "mat_id": "314",
+    "name": "Cobblestone Stairs (South, Normal)"
+  },
+  {
+    "x": 7,
+    "y": 4,
+    "z": 11,
+    "mat_id": "4",
+    "name": "Cobblestone"
+  },
+  {
+    "x": 9,
+    "y": 4,
+    "z": 6,
+    "mat_id": "448",
+    "name": "Torch (Facing South)"
+  },
+  {
+    "x": 9,
+    "y": 4,
+    "z": 10,
+    "mat_id": "448",
+    "name": "Torch (Facing South)"
+  },
+  {
+    "x": 10,
+    "y": 4,
+    "z": 2,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 10,
+    "y": 4,
+    "z": 6,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 10,
+    "y": 4,
+    "z": 10,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 10,
+    "y": 4,
+    "z": 14,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 2,
+    "y": 5,
+    "z": 2,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 2,
+    "y": 5,
+    "z": 6,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 2,
+    "y": 5,
+    "z": 10,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 2,
+    "y": 5,
+    "z": 14,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 5,
+    "y": 5,
+    "z": 9,
+    "mat_id": "44:3",
+    "name": "Cobblestone Slab"
+  },
+  {
+    "x": 5,
+    "y": 5,
+    "z": 10,
+    "mat_id": "315",
+    "name": "Cobblestone Stairs (North, Normal)"
+  },
+  {
+    "x": 5,
+    "y": 5,
+    "z": 11,
+    "mat_id": "4",
+    "name": "Cobblestone"
+  },
+  {
+    "x": 6,
+    "y": 5,
+    "z": 9,
+    "mat_id": "115",
+    "name": "Cobblestone Stairs (East, Normal)"
+  },
+  {
+    "x": 6,
+    "y": 5,
+    "z": 11,
+    "mat_id": "4",
+    "name": "Cobblestone"
+  },
+  {
+    "x": 6,
+    "y": 5,
+    "z": 14,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 7,
+    "y": 5,
+    "z": 9,
+    "mat_id": "44:3",
+    "name": "Cobblestone Slab"
+  },
+  {
+    "x": 7,
+    "y": 5,
+    "z": 10,
+    "mat_id": "314",
+    "name": "Cobblestone Stairs (South, Normal)"
+  },
+  {
+    "x": 7,
+    "y": 5,
+    "z": 11,
+    "mat_id": "4",
+    "name": "Cobblestone"
+  },
+  {
+    "x": 10,
+    "y": 5,
+    "z": 2,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 10,
+    "y": 5,
+    "z": 6,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 10,
+    "y": 5,
+    "z": 10,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 10,
+    "y": 5,
+    "z": 14,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 1,
+    "y": 6,
+    "z": 1,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 1,
+    "y": 6,
+    "z": 2,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 1,
+    "y": 6,
+    "z": 3,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 1,
+    "y": 6,
+    "z": 4,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 1,
+    "y": 6,
+    "z": 5,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 1,
+    "y": 6,
+    "z": 6,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 1,
+    "y": 6,
+    "z": 7,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 1,
+    "y": 6,
+    "z": 8,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 1,
+    "y": 6,
+    "z": 9,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 1,
+    "y": 6,
+    "z": 10,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 1,
+    "y": 6,
+    "z": 11,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 1,
+    "y": 6,
+    "z": 12,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 1,
+    "y": 6,
+    "z": 13,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 1,
+    "y": 6,
+    "z": 14,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 1,
+    "y": 6,
+    "z": 15,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 2,
+    "y": 6,
+    "z": 1,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 2,
+    "y": 6,
+    "z": 2,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 2,
+    "y": 6,
+    "z": 3,
+    "mat_id": "295",
+    "name": "Oak Wood (facing east/west)"
+  },
+  {
+    "x": 2,
+    "y": 6,
+    "z": 4,
+    "mat_id": "295",
+    "name": "Oak Wood (facing east/west)"
+  },
+  {
+    "x": 2,
+    "y": 6,
+    "z": 5,
+    "mat_id": "295",
+    "name": "Oak Wood (facing east/west)"
+  },
+  {
+    "x": 2,
+    "y": 6,
+    "z": 6,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 2,
+    "y": 6,
+    "z": 7,
+    "mat_id": "295",
+    "name": "Oak Wood (facing east/west)"
+  },
+  {
+    "x": 2,
+    "y": 6,
+    "z": 8,
+    "mat_id": "295",
+    "name": "Oak Wood (facing east/west)"
+  },
+  {
+    "x": 2,
+    "y": 6,
+    "z": 9,
+    "mat_id": "295",
+    "name": "Oak Wood (facing east/west)"
+  },
+  {
+    "x": 2,
+    "y": 6,
+    "z": 10,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 2,
+    "y": 6,
+    "z": 11,
+    "mat_id": "295",
+    "name": "Oak Wood (facing east/west)"
+  },
+  {
+    "x": 2,
+    "y": 6,
+    "z": 12,
+    "mat_id": "295",
+    "name": "Oak Wood (facing east/west)"
+  },
+  {
+    "x": 2,
+    "y": 6,
+    "z": 13,
+    "mat_id": "295",
+    "name": "Oak Wood (facing east/west)"
+  },
+  {
+    "x": 2,
+    "y": 6,
+    "z": 14,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 2,
+    "y": 6,
+    "z": 15,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 3,
+    "y": 6,
+    "z": 2,
+    "mat_id": "294",
+    "name": "Oak Wood (facing north/south)"
+  },
+  {
+    "x": 3,
+    "y": 6,
+    "z": 3,
+    "mat_id": "181",
+    "name": "Oak Fence Gate (Facing South, Closed)"
+  },
+  {
+    "x": 3,
+    "y": 6,
+    "z": 4,
+    "mat_id": "181",
+    "name": "Oak Fence Gate (Facing South, Closed)"
+  },
+  {
+    "x": 3,
+    "y": 6,
+    "z": 5,
+    "mat_id": "181",
+    "name": "Oak Fence Gate (Facing South, Closed)"
+  },
+  {
+    "x": 3,
+    "y": 6,
+    "z": 6,
+    "mat_id": "85",
+    "name": "Oak Fence"
+  },
+  {
+    "x": 3,
+    "y": 6,
+    "z": 7,
+    "mat_id": "181",
+    "name": "Oak Fence Gate (Facing South, Closed)"
+  },
+  {
+    "x": 3,
+    "y": 6,
+    "z": 8,
+    "mat_id": "181",
+    "name": "Oak Fence Gate (Facing South, Closed)"
+  },
+  {
+    "x": 3,
+    "y": 6,
+    "z": 9,
+    "mat_id": "181",
+    "name": "Oak Fence Gate (Facing South, Closed)"
+  },
+  {
+    "x": 3,
+    "y": 6,
+    "z": 10,
+    "mat_id": "85",
+    "name": "Oak Fence"
+  },
+  {
+    "x": 3,
+    "y": 6,
+    "z": 11,
+    "mat_id": "181",
+    "name": "Oak Fence Gate (Facing South, Closed)"
+  },
+  {
+    "x": 3,
+    "y": 6,
+    "z": 12,
+    "mat_id": "181",
+    "name": "Oak Fence Gate (Facing South, Closed)"
+  },
+  {
+    "x": 3,
+    "y": 6,
+    "z": 13,
+    "mat_id": "85",
+    "name": "Oak Fence"
+  },
+  {
+    "x": 3,
+    "y": 6,
+    "z": 14,
+    "mat_id": "294",
+    "name": "Oak Wood (facing north/south)"
+  },
+  {
+    "x": 4,
+    "y": 6,
+    "z": 2,
+    "mat_id": "294",
+    "name": "Oak Wood (facing north/south)"
+  },
+  {
+    "x": 4,
+    "y": 6,
+    "z": 14,
+    "mat_id": "294",
+    "name": "Oak Wood (facing north/south)"
+  },
+  {
+    "x": 5,
+    "y": 6,
+    "z": 2,
+    "mat_id": "294",
+    "name": "Oak Wood (facing north/south)"
+  },
+  {
+    "x": 5,
+    "y": 6,
+    "z": 9,
+    "mat_id": "44:3",
+    "name": "Cobblestone Slab"
+  },
+  {
+    "x": 5,
+    "y": 6,
+    "z": 10,
+    "mat_id": "315",
+    "name": "Cobblestone Stairs (North, Normal)"
+  },
+  {
+    "x": 5,
+    "y": 6,
+    "z": 11,
+    "mat_id": "4",
+    "name": "Cobblestone"
+  },
+  {
+    "x": 5,
+    "y": 6,
+    "z": 14,
+    "mat_id": "294",
+    "name": "Oak Wood (facing north/south)"
+  },
+  {
+    "x": 6,
+    "y": 6,
+    "z": 2,
+    "mat_id": "294",
+    "name": "Oak Wood (facing north/south)"
+  },
+  {
+    "x": 6,
+    "y": 6,
+    "z": 9,
+    "mat_id": "115",
+    "name": "Cobblestone Stairs (East, Normal)"
+  },
+  {
+    "x": 6,
+    "y": 6,
+    "z": 11,
+    "mat_id": "4",
+    "name": "Cobblestone"
+  },
+  {
+    "x": 6,
+    "y": 6,
+    "z": 14,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 7,
+    "y": 6,
+    "z": 2,
+    "mat_id": "294",
+    "name": "Oak Wood (facing north/south)"
+  },
+  {
+    "x": 7,
+    "y": 6,
+    "z": 9,
+    "mat_id": "44:3",
+    "name": "Cobblestone Slab"
+  },
+  {
+    "x": 7,
+    "y": 6,
+    "z": 10,
+    "mat_id": "314",
+    "name": "Cobblestone Stairs (South, Normal)"
+  },
+  {
+    "x": 7,
+    "y": 6,
+    "z": 11,
+    "mat_id": "4",
+    "name": "Cobblestone"
+  },
+  {
+    "x": 7,
+    "y": 6,
+    "z": 14,
+    "mat_id": "294",
+    "name": "Oak Wood (facing north/south)"
+  },
+  {
+    "x": 8,
+    "y": 6,
+    "z": 2,
+    "mat_id": "294",
+    "name": "Oak Wood (facing north/south)"
+  },
+  {
+    "x": 8,
+    "y": 6,
+    "z": 14,
+    "mat_id": "294",
+    "name": "Oak Wood (facing north/south)"
+  },
+  {
+    "x": 9,
+    "y": 6,
+    "z": 2,
+    "mat_id": "294",
+    "name": "Oak Wood (facing north/south)"
+  },
+  {
+    "x": 9,
+    "y": 6,
+    "z": 3,
+    "mat_id": "85",
+    "name": "Oak Fence"
+  },
+  {
+    "x": 9,
+    "y": 6,
+    "z": 4,
+    "mat_id": "1036",
+    "name": "Oak Fence Gate (Facing North, Closed)"
+  },
+  {
+    "x": 9,
+    "y": 6,
+    "z": 5,
+    "mat_id": "1036",
+    "name": "Oak Fence Gate (Facing North, Closed)"
+  },
+  {
+    "x": 9,
+    "y": 6,
+    "z": 6,
+    "mat_id": "85",
+    "name": "Oak Fence"
+  },
+  {
+    "x": 9,
+    "y": 6,
+    "z": 7,
+    "mat_id": "1036",
+    "name": "Oak Fence Gate (Facing North, Closed)"
+  },
+  {
+    "x": 9,
+    "y": 6,
+    "z": 8,
+    "mat_id": "1036",
+    "name": "Oak Fence Gate (Facing North, Closed)"
+  },
+  {
+    "x": 9,
+    "y": 6,
+    "z": 9,
+    "mat_id": "1036",
+    "name": "Oak Fence Gate (Facing North, Closed)"
+  },
+  {
+    "x": 9,
+    "y": 6,
+    "z": 10,
+    "mat_id": "85",
+    "name": "Oak Fence"
+  },
+  {
+    "x": 9,
+    "y": 6,
+    "z": 11,
+    "mat_id": "1036",
+    "name": "Oak Fence Gate (Facing North, Closed)"
+  },
+  {
+    "x": 9,
+    "y": 6,
+    "z": 12,
+    "mat_id": "1036",
+    "name": "Oak Fence Gate (Facing North, Closed)"
+  },
+  {
+    "x": 9,
+    "y": 6,
+    "z": 13,
+    "mat_id": "85",
+    "name": "Oak Fence"
+  },
+  {
+    "x": 9,
+    "y": 6,
+    "z": 14,
+    "mat_id": "294",
+    "name": "Oak Wood (facing north/south)"
+  },
+  {
+    "x": 10,
+    "y": 6,
+    "z": 1,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 10,
+    "y": 6,
+    "z": 2,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 10,
+    "y": 6,
+    "z": 3,
+    "mat_id": "295",
+    "name": "Oak Wood (facing east/west)"
+  },
+  {
+    "x": 10,
+    "y": 6,
+    "z": 4,
+    "mat_id": "295",
+    "name": "Oak Wood (facing east/west)"
+  },
+  {
+    "x": 10,
+    "y": 6,
+    "z": 5,
+    "mat_id": "295",
+    "name": "Oak Wood (facing east/west)"
+  },
+  {
+    "x": 10,
+    "y": 6,
+    "z": 6,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 10,
+    "y": 6,
+    "z": 7,
+    "mat_id": "295",
+    "name": "Oak Wood (facing east/west)"
+  },
+  {
+    "x": 10,
+    "y": 6,
+    "z": 8,
+    "mat_id": "295",
+    "name": "Oak Wood (facing east/west)"
+  },
+  {
+    "x": 10,
+    "y": 6,
+    "z": 9,
+    "mat_id": "295",
+    "name": "Oak Wood (facing east/west)"
+  },
+  {
+    "x": 10,
+    "y": 6,
+    "z": 10,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 10,
+    "y": 6,
+    "z": 11,
+    "mat_id": "295",
+    "name": "Oak Wood (facing east/west)"
+  },
+  {
+    "x": 10,
+    "y": 6,
+    "z": 12,
+    "mat_id": "295",
+    "name": "Oak Wood (facing east/west)"
+  },
+  {
+    "x": 10,
+    "y": 6,
+    "z": 13,
+    "mat_id": "295",
+    "name": "Oak Wood (facing east/west)"
+  },
+  {
+    "x": 10,
+    "y": 6,
+    "z": 14,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 10,
+    "y": 6,
+    "z": 15,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 11,
+    "y": 6,
+    "z": 1,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 11,
+    "y": 6,
+    "z": 2,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 11,
+    "y": 6,
+    "z": 3,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 11,
+    "y": 6,
+    "z": 4,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 11,
+    "y": 6,
+    "z": 5,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 11,
+    "y": 6,
+    "z": 6,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 11,
+    "y": 6,
+    "z": 7,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 11,
+    "y": 6,
+    "z": 8,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 11,
+    "y": 6,
+    "z": 9,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 11,
+    "y": 6,
+    "z": 10,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 11,
+    "y": 6,
+    "z": 11,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 11,
+    "y": 6,
+    "z": 12,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 11,
+    "y": 6,
+    "z": 13,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 11,
+    "y": 6,
+    "z": 14,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 11,
+    "y": 6,
+    "z": 15,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 2,
+    "y": 7,
+    "z": 1,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 2,
+    "y": 7,
+    "z": 2,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 2,
+    "y": 7,
+    "z": 3,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 2,
+    "y": 7,
+    "z": 4,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 2,
+    "y": 7,
+    "z": 5,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 2,
+    "y": 7,
+    "z": 6,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 2,
+    "y": 7,
+    "z": 7,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 2,
+    "y": 7,
+    "z": 8,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 2,
+    "y": 7,
+    "z": 9,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 2,
+    "y": 7,
+    "z": 10,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 2,
+    "y": 7,
+    "z": 11,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 2,
+    "y": 7,
+    "z": 12,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 2,
+    "y": 7,
+    "z": 13,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 2,
+    "y": 7,
+    "z": 14,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 2,
+    "y": 7,
+    "z": 15,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 3,
+    "y": 7,
+    "z": 1,
+    "mat_id": "125",
+    "name": "Double Oak Wood Slab"
+  },
+  {
+    "x": 3,
+    "y": 7,
+    "z": 2,
+    "mat_id": "125",
+    "name": "Double Oak Wood Slab"
+  },
+  {
+    "x": 3,
+    "y": 7,
+    "z": 3,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 3,
+    "y": 7,
+    "z": 4,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 3,
+    "y": 7,
+    "z": 5,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 3,
+    "y": 7,
+    "z": 6,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 3,
+    "y": 7,
+    "z": 7,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 3,
+    "y": 7,
+    "z": 8,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 3,
+    "y": 7,
+    "z": 9,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 3,
+    "y": 7,
+    "z": 10,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 3,
+    "y": 7,
+    "z": 11,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 3,
+    "y": 7,
+    "z": 12,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 3,
+    "y": 7,
+    "z": 13,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 3,
+    "y": 7,
+    "z": 14,
+    "mat_id": "125",
+    "name": "Double Oak Wood Slab"
+  },
+  {
+    "x": 3,
+    "y": 7,
+    "z": 15,
+    "mat_id": "125",
+    "name": "Double Oak Wood Slab"
+  },
+  {
+    "x": 4,
+    "y": 7,
+    "z": 2,
+    "mat_id": "85",
+    "name": "Oak Fence"
+  },
+  {
+    "x": 4,
+    "y": 7,
+    "z": 14,
+    "mat_id": "85",
+    "name": "Oak Fence"
+  },
+  {
+    "x": 5,
+    "y": 7,
+    "z": 2,
+    "mat_id": "125",
+    "name": "Double Oak Wood Slab"
+  },
+  {
+    "x": 5,
+    "y": 7,
+    "z": 9,
+    "mat_id": "44:3",
+    "name": "Cobblestone Slab"
+  },
+  {
+    "x": 5,
+    "y": 7,
+    "z": 10,
+    "mat_id": "315",
+    "name": "Cobblestone Stairs (North, Normal)"
+  },
+  {
+    "x": 5,
+    "y": 7,
+    "z": 11,
+    "mat_id": "4",
+    "name": "Cobblestone"
+  },
+  {
+    "x": 5,
+    "y": 7,
+    "z": 14,
+    "mat_id": "125",
+    "name": "Double Oak Wood Slab"
+  },
+  {
+    "x": 6,
+    "y": 7,
+    "z": 2,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 6,
+    "y": 7,
+    "z": 9,
+    "mat_id": "115",
+    "name": "Cobblestone Stairs (East, Normal)"
+  },
+  {
+    "x": 6,
+    "y": 7,
+    "z": 11,
+    "mat_id": "4",
+    "name": "Cobblestone"
+  },
+  {
+    "x": 6,
+    "y": 7,
+    "z": 14,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 7,
+    "y": 7,
+    "z": 2,
+    "mat_id": "125",
+    "name": "Double Oak Wood Slab"
+  },
+  {
+    "x": 7,
+    "y": 7,
+    "z": 9,
+    "mat_id": "44:3",
+    "name": "Cobblestone Slab"
+  },
+  {
+    "x": 7,
+    "y": 7,
+    "z": 10,
+    "mat_id": "314",
+    "name": "Cobblestone Stairs (South, Normal)"
+  },
+  {
+    "x": 7,
+    "y": 7,
+    "z": 11,
+    "mat_id": "4",
+    "name": "Cobblestone"
+  },
+  {
+    "x": 7,
+    "y": 7,
+    "z": 14,
+    "mat_id": "125",
+    "name": "Double Oak Wood Slab"
+  },
+  {
+    "x": 8,
+    "y": 7,
+    "z": 2,
+    "mat_id": "85",
+    "name": "Oak Fence"
+  },
+  {
+    "x": 8,
+    "y": 7,
+    "z": 14,
+    "mat_id": "85",
+    "name": "Oak Fence"
+  },
+  {
+    "x": 9,
+    "y": 7,
+    "z": 1,
+    "mat_id": "125",
+    "name": "Double Oak Wood Slab"
+  },
+  {
+    "x": 9,
+    "y": 7,
+    "z": 2,
+    "mat_id": "125",
+    "name": "Double Oak Wood Slab"
+  },
+  {
+    "x": 9,
+    "y": 7,
+    "z": 3,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 9,
+    "y": 7,
+    "z": 4,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 9,
+    "y": 7,
+    "z": 5,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 9,
+    "y": 7,
+    "z": 6,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 9,
+    "y": 7,
+    "z": 7,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 9,
+    "y": 7,
+    "z": 8,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 9,
+    "y": 7,
+    "z": 9,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 9,
+    "y": 7,
+    "z": 10,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 9,
+    "y": 7,
+    "z": 11,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 9,
+    "y": 7,
+    "z": 12,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 9,
+    "y": 7,
+    "z": 13,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 9,
+    "y": 7,
+    "z": 14,
+    "mat_id": "125",
+    "name": "Double Oak Wood Slab"
+  },
+  {
+    "x": 9,
+    "y": 7,
+    "z": 15,
+    "mat_id": "125",
+    "name": "Double Oak Wood Slab"
+  },
+  {
+    "x": 10,
+    "y": 7,
+    "z": 1,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 10,
+    "y": 7,
+    "z": 2,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 10,
+    "y": 7,
+    "z": 3,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 10,
+    "y": 7,
+    "z": 4,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 10,
+    "y": 7,
+    "z": 5,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 10,
+    "y": 7,
+    "z": 6,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 10,
+    "y": 7,
+    "z": 7,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 10,
+    "y": 7,
+    "z": 8,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 10,
+    "y": 7,
+    "z": 9,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 10,
+    "y": 7,
+    "z": 10,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 10,
+    "y": 7,
+    "z": 11,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 10,
+    "y": 7,
+    "z": 12,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 10,
+    "y": 7,
+    "z": 13,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 10,
+    "y": 7,
+    "z": 14,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 10,
+    "y": 7,
+    "z": 15,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 4,
+    "y": 8,
+    "z": 1,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 4,
+    "y": 8,
+    "z": 2,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 4,
+    "y": 8,
+    "z": 3,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 4,
+    "y": 8,
+    "z": 4,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 4,
+    "y": 8,
+    "z": 5,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 4,
+    "y": 8,
+    "z": 6,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 4,
+    "y": 8,
+    "z": 7,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 4,
+    "y": 8,
+    "z": 8,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 4,
+    "y": 8,
+    "z": 9,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 4,
+    "y": 8,
+    "z": 10,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 4,
+    "y": 8,
+    "z": 11,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 4,
+    "y": 8,
+    "z": 12,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 4,
+    "y": 8,
+    "z": 13,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 4,
+    "y": 8,
+    "z": 14,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 4,
+    "y": 8,
+    "z": 15,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 5,
+    "y": 8,
+    "z": 1,
+    "mat_id": "125",
+    "name": "Double Oak Wood Slab"
+  },
+  {
+    "x": 5,
+    "y": 8,
+    "z": 2,
+    "mat_id": "125",
+    "name": "Double Oak Wood Slab"
+  },
+  {
+    "x": 5,
+    "y": 8,
+    "z": 3,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 5,
+    "y": 8,
+    "z": 4,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 5,
+    "y": 8,
+    "z": 5,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 5,
+    "y": 8,
+    "z": 6,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 5,
+    "y": 8,
+    "z": 7,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 5,
+    "y": 8,
+    "z": 8,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 5,
+    "y": 8,
+    "z": 9,
+    "mat_id": "4",
+    "name": "Cobblestone"
+  },
+  {
+    "x": 5,
+    "y": 8,
+    "z": 10,
+    "mat_id": "4",
+    "name": "Cobblestone"
+  },
+  {
+    "x": 5,
+    "y": 8,
+    "z": 11,
+    "mat_id": "4",
+    "name": "Cobblestone"
+  },
+  {
+    "x": 5,
+    "y": 8,
+    "z": 12,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 5,
+    "y": 8,
+    "z": 13,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 5,
+    "y": 8,
+    "z": 14,
+    "mat_id": "125",
+    "name": "Double Oak Wood Slab"
+  },
+  {
+    "x": 5,
+    "y": 8,
+    "z": 15,
+    "mat_id": "125",
+    "name": "Double Oak Wood Slab"
+  },
+  {
+    "x": 6,
+    "y": 8,
+    "z": 1,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 6,
+    "y": 8,
+    "z": 2,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 6,
+    "y": 8,
+    "z": 9,
+    "mat_id": "115",
+    "name": "Cobblestone Stairs (East, Normal)"
+  },
+  {
+    "x": 6,
+    "y": 8,
+    "z": 11,
+    "mat_id": "4",
+    "name": "Cobblestone"
+  },
+  {
+    "x": 6,
+    "y": 8,
+    "z": 14,
+    "mat_id": "17",
+    "name": "Oak Wood"
+  },
+  {
+    "x": 6,
+    "y": 8,
+    "z": 15,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 7,
+    "y": 8,
+    "z": 1,
+    "mat_id": "125",
+    "name": "Double Oak Wood Slab"
+  },
+  {
+    "x": 7,
+    "y": 8,
+    "z": 2,
+    "mat_id": "125",
+    "name": "Double Oak Wood Slab"
+  },
+  {
+    "x": 7,
+    "y": 8,
+    "z": 3,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 7,
+    "y": 8,
+    "z": 4,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 7,
+    "y": 8,
+    "z": 5,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 7,
+    "y": 8,
+    "z": 6,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 7,
+    "y": 8,
+    "z": 7,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 7,
+    "y": 8,
+    "z": 8,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 7,
+    "y": 8,
+    "z": 9,
+    "mat_id": "4",
+    "name": "Cobblestone"
+  },
+  {
+    "x": 7,
+    "y": 8,
+    "z": 10,
+    "mat_id": "4",
+    "name": "Cobblestone"
+  },
+  {
+    "x": 7,
+    "y": 8,
+    "z": 11,
+    "mat_id": "4",
+    "name": "Cobblestone"
+  },
+  {
+    "x": 7,
+    "y": 8,
+    "z": 12,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 7,
+    "y": 8,
+    "z": 13,
+    "mat_id": "325",
+    "name": "Oak Wood Slab (Upper)"
+  },
+  {
+    "x": 7,
+    "y": 8,
+    "z": 14,
+    "mat_id": "125",
+    "name": "Double Oak Wood Slab"
+  },
+  {
+    "x": 7,
+    "y": 8,
+    "z": 15,
+    "mat_id": "125",
+    "name": "Double Oak Wood Slab"
+  },
+  {
+    "x": 8,
+    "y": 8,
+    "z": 1,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 8,
+    "y": 8,
+    "z": 2,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 8,
+    "y": 8,
+    "z": 3,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 8,
+    "y": 8,
+    "z": 4,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 8,
+    "y": 8,
+    "z": 5,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 8,
+    "y": 8,
+    "z": 6,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 8,
+    "y": 8,
+    "z": 7,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 8,
+    "y": 8,
+    "z": 8,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 8,
+    "y": 8,
+    "z": 9,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 8,
+    "y": 8,
+    "z": 10,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 8,
+    "y": 8,
+    "z": 11,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 8,
+    "y": 8,
+    "z": 12,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 8,
+    "y": 8,
+    "z": 13,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 8,
+    "y": 8,
+    "z": 14,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 8,
+    "y": 8,
+    "z": 15,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 5,
+    "y": 9,
+    "z": 9,
+    "mat_id": "44:3",
+    "name": "Cobblestone Slab"
+  },
+  {
+    "x": 5,
+    "y": 9,
+    "z": 10,
+    "mat_id": "4",
+    "name": "Cobblestone"
+  },
+  {
+    "x": 5,
+    "y": 9,
+    "z": 11,
+    "mat_id": "44:3",
+    "name": "Cobblestone Slab"
+  },
+  {
+    "x": 6,
+    "y": 9,
+    "z": 1,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 6,
+    "y": 9,
+    "z": 2,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 6,
+    "y": 9,
+    "z": 3,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 6,
+    "y": 9,
+    "z": 4,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 6,
+    "y": 9,
+    "z": 5,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 6,
+    "y": 9,
+    "z": 6,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 6,
+    "y": 9,
+    "z": 7,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 6,
+    "y": 9,
+    "z": 8,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 6,
+    "y": 9,
+    "z": 9,
+    "mat_id": "4",
+    "name": "Cobblestone"
+  },
+  {
+    "x": 6,
+    "y": 9,
+    "z": 11,
+    "mat_id": "4",
+    "name": "Cobblestone"
+  },
+  {
+    "x": 6,
+    "y": 9,
+    "z": 12,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 6,
+    "y": 9,
+    "z": 13,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 6,
+    "y": 9,
+    "z": 14,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 6,
+    "y": 9,
+    "z": 15,
+    "mat_id": "126",
+    "name": "Oak Wood Slab"
+  },
+  {
+    "x": 7,
+    "y": 9,
+    "z": 9,
+    "mat_id": "44:3",
+    "name": "Cobblestone Slab"
+  },
+  {
+    "x": 7,
+    "y": 9,
+    "z": 10,
+    "mat_id": "4",
+    "name": "Cobblestone"
+  },
+  {
+    "x": 7,
+    "y": 9,
+    "z": 11,
+    "mat_id": "44:3",
+    "name": "Cobblestone Slab"
+  }
+]
