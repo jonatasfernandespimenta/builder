@@ -97,7 +97,7 @@ bot.on("messagestr", async (message, messagePosition, jsonMsg) => {
 
 function handleHelp() {
   bot.chat("--- BuilderBot Commands ---");
-  bot.chat("!build <style> - Generate a building (e.g. !build medieval)");
+  bot.chat("!build <style> <x> <y> <z> - Generate & build live (e.g. !build house 100 64 200)");
   bot.chat("!list - Show available building styles");
   bot.chat("!pos <x> <y> <z> - Set build position and start building");
   bot.chat("!cancel - Cancel current build");
@@ -116,22 +116,59 @@ async function handleBuild(username, args) {
     return;
   }
 
-  const style = args.join(" ") || "random";
-  bot.chat(`Generating "${style}" building...`);
+  // Streaming disabled for now — model needs retraining
+  if (false && provider.streamGenerate) {
+    // Parse: !build <style> <x> <y> <z>  OR  !build <style>
+    // Try to find coordinates at the end
+    const nums = args.slice(-3).map(Number);
+    const hasCoords = nums.length === 3 && nums.every((n) => !isNaN(n));
 
-  const building = await provider.generate(style);
-  if (!building || !building.blocks.length) {
-    bot.chat("Failed to generate a building. Try a different style.");
-    return;
+    const style = hasCoords ? args.slice(0, -3).join(" ") || "house" : args.join(" ") || "house";
+
+    if (!hasCoords) {
+      bot.chat(`Usage: !build <style> <x> <y> <z> (e.g. !build house 100 64 200)`);
+      return;
+    }
+
+    const [x, y, z] = nums;
+    sessions[username] = { active: true };
+
+    bot.chat(`Generating and building "${style}" live at ${x} ${y} ${z}...`);
+
+    buildQueue.startStreaming({ x, y, z }, (placed) => {
+      bot.chat(`Done! Placed ${placed} blocks.`);
+      delete sessions[username];
+    });
+
+    provider.streamGenerate(
+      style,
+      (block) => {
+        buildQueue.addBlock(block);
+      },
+      () => {
+        buildQueue.finishStreaming();
+        bot.chat("AI finished generating. Placing remaining blocks...");
+      }
+    );
+  } else {
+    // Non-streaming fallback (file/sample provider)
+    const style = args.join(" ") || "random";
+    bot.chat(`Generating "${style}" building...`);
+
+    const building = await provider.generate(style);
+    if (!building || !building.blocks.length) {
+      bot.chat("Failed to generate a building. Try a different style.");
+      return;
+    }
+
+    sessions[username] = { building };
+
+    bot.chat(`--- ${building.name} ---`);
+    bot.chat(
+      `Size: ${building.dimensions.width}x${building.dimensions.height}x${building.dimensions.depth} | Blocks: ${building.blocks.length}`
+    );
+    bot.chat(`${username}, give me a position with: !pos <x> <y> <z>`);
   }
-
-  sessions[username] = { building };
-
-  bot.chat(`--- ${building.name} ---`);
-  bot.chat(
-    `Size: ${building.dimensions.width}x${building.dimensions.height}x${building.dimensions.depth} | Blocks: ${building.blocks.length}`
-  );
-  bot.chat(`${username}, give me a position with: !pos <x> <y> <z>`);
 }
 
 function handlePos(username, args) {

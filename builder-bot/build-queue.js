@@ -86,6 +86,82 @@ class BuildQueue {
     await this._sleep(50);
   }
 
+  /**
+   * Start a streaming build. Blocks are added live as the AI generates them.
+   * Call addBlock() to push new blocks, and finish() when generation is done.
+   */
+  startStreaming(origin, onDone) {
+    this.placedPositions = [];
+    this.placed = 0;
+    this.active = true;
+    this.cancelled = false;
+    this._streamOrigin = origin;
+    this._streamQueue = [];
+    this._streamDone = false;
+    this._streamOnDone = onDone;
+    this._streamMins = null;
+    this._processStream();
+  }
+
+  addBlock(block) {
+    this._streamQueue.push(block);
+  }
+
+  finishStreaming() {
+    this._streamDone = true;
+  }
+
+  async _processStream() {
+    while (!this.cancelled) {
+      if (this._streamQueue.length > 0) {
+        const block = this._streamQueue.shift();
+        const { x, y, z } = this._streamOrigin;
+
+        // Track mins for normalization
+        if (!this._streamMins) {
+          this._streamMins = { x: block.x, y: block.y, z: block.z };
+        } else {
+          this._streamMins.x = Math.min(this._streamMins.x, block.x);
+          this._streamMins.y = Math.min(this._streamMins.y, block.y);
+          this._streamMins.z = Math.min(this._streamMins.z, block.z);
+        }
+
+        const pos = vec3(
+          block.x - this._streamMins.x + x,
+          block.y - this._streamMins.y + y,
+          block.z - this._streamMins.z + z
+        );
+
+        const mcBlockName = blockMap[block.mat_id];
+        if (mcBlockName) {
+          try {
+            await this._placeBlock(pos, mcBlockName);
+            this.placedPositions.push(pos);
+          } catch (err) {
+            console.error(`Failed to place ${mcBlockName}: ${err.message}`);
+          }
+        }
+
+        this.placed++;
+        if (this.placed % 50 === 0) {
+          this.bot.chat(`Placed ${this.placed} blocks so far...`);
+        }
+
+        await this._sleep(50);
+      } else if (this._streamDone) {
+        break;
+      } else {
+        // Wait for more blocks
+        await this._sleep(100);
+      }
+    }
+
+    this.active = false;
+    if (!this.cancelled && this._streamOnDone) {
+      this._streamOnDone(this.placed);
+    }
+  }
+
   async undo(onDone) {
     if (this.placedPositions.length === 0) return false;
     if (this.undoing) return false;

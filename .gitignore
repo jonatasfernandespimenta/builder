@@ -5,10 +5,11 @@ __pycache__/
 .DS_Store
 nvim-macos-x86_64.tar.gz
 
-# Model checkpoints and trained models (too large for git)
+# Model checkpoints, trained models, and large data (too large for git)
 builderai/models/
 builderai/checkpoint/
 builderai/logs/
+builderai/data.json
 
 # Generation test output
 builder-bot/generation.json

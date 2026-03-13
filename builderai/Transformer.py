@@ -1,5 +1,6 @@
 from tensorflow.keras import layers, models, losses, callbacks
 import tensorflow as tf
+import keras
 
 def causal_attention_mask(batch_size, n_dest, n_src, dtype):
     i = tf.range(n_dest)[:, None]
@@ -13,9 +14,10 @@ def causal_attention_mask(batch_size, n_dest, n_src, dtype):
     return tf.tile(mask, mult)
 
 
+@keras.saving.register_keras_serializable()
 class TransformerBlock(layers.Layer):
-    def __init__(self, num_heads, key_dim, embed_dim, ff_dim, dropout_rate=0.1):
-        super(TransformerBlock, self).__init__()
+    def __init__(self, num_heads, key_dim, embed_dim, ff_dim, dropout_rate=0.1, **kwargs):
+        super(TransformerBlock, self).__init__(**kwargs)
         self.num_heads = num_heads
         self.key_dim = key_dim
         self.embed_dim = embed_dim

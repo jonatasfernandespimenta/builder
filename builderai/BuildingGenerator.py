@@ -38,5 +38,5 @@ class BuildingGenerator(callbacks.Callback):
         return info
 
     def on_epoch_end(self, epoch, logs=None):
-        self.generate("<start> name=small_house dim=6x5x6 <blocks>", max_tokens=200, temperature=1.0)
+        self.generate("<start> name=small_house dim=6x5x6 <blocks>", max_tokens=800, temperature=0.5)
     

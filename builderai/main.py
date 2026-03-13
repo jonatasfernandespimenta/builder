@@ -81,7 +81,7 @@ gpt.compile("adam", loss=[losses.SparseCategoricalCrossentropy(), None])
 
 if LOAD_MODEL:
     # model.load_weights('./models/model')
-    gpt = models.load_model("./models/gpt", compile=True)
+    gpt = models.load_model("./models/gpt.keras", compile=True)
 
 model_checkpoint_callback = callbacks.ModelCheckpoint(
     filepath="./checkpoint/checkpoint.weights.h5",
@@ -100,7 +100,7 @@ gpt.fit(
     epochs=EPOCHS,
     callbacks=[model_checkpoint_callback, tensorboard_callback, text_generator],
 )
-gpt.save("./models/gpt")
+gpt.save("./models/gpt.keras")
 
 def print_probs(info, vocab, top_k=5):
     for i in info:

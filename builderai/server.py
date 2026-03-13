@@ -22,7 +22,7 @@ from Transformer import TransformerBlock
 from TokenAndPositionEmbedding import TokenAndPositionEmbedding
 
 HOST = "0.0.0.0"
-PORT = 5000
+PORT = 5050
 
 VOCAB_SIZE = 10000
 MAX_LEN = 4096
@@ -48,11 +48,11 @@ STYLE_PROMPTS = {
 
 def load_model():
     """Load the trained model and vocabulary."""
-    model_path = os.path.join(os.path.dirname(__file__), "models", "gpt")
+    weights_path = os.path.join(os.path.dirname(__file__), "checkpoint", "checkpoint.weights.h5")
     data_path = os.path.join(os.path.dirname(__file__), "data.json")
 
-    if not os.path.exists(model_path):
-        print(f"ERROR: No trained model found at {model_path}")
+    if not os.path.exists(weights_path):
+        print(f"ERROR: No trained weights found at {weights_path}")
         print("Train the model first with: python main.py")
         sys.exit(1)
 
@@ -74,15 +74,85 @@ def load_model():
     vectorize_layer.adapt(text_ds)
     vocab = vectorize_layer.get_vocabulary()
 
-    # Load the trained model
-    gpt = models.load_model(model_path, compile=False)
-    print(f"Model loaded from {model_path}")
+    # Rebuild model architecture and load weights
+    inputs = layers.Input(shape=(None,), dtype=tf.int32)
+    x = TokenAndPositionEmbedding(MAX_LEN, VOCAB_SIZE, EMBEDDING_DIM)(inputs)
+    x, attention_scores = TransformerBlock(N_HEADS, KEY_DIM, EMBEDDING_DIM, FEED_FORWARD_DIM)(x)
+    outputs = layers.Dense(VOCAB_SIZE, activation="softmax")(x)
+    gpt = models.Model(inputs=inputs, outputs=[outputs, attention_scores])
+    gpt.load_weights(weights_path)
+    print(f"Model loaded from {weights_path}")
 
     return gpt, vocab, tokenizer
 
 
-def generate_building(model, vocab, tokenizer, prompt, max_tokens=4096, temperature=0.8):
-    """Generate a building from a prompt string."""
+def generate_building_stream(model, vocab, prompt, max_tokens=4096, temperature=0.8):
+    """Generate tokens one by one, yielding complete blocks as they form.
+    Uses a sliding window to keep memory bounded."""
+    WINDOW_SIZE = 512
+    word_to_index = {word: i for i, word in enumerate(vocab)}
+
+    start_tokens = [word_to_index.get(x, 1) for x in prompt.split()]
+
+    sample_token = None
+    # Buffer to accumulate tokens for current block (m# x# y# z#)
+    block_buf = []
+
+    while len(start_tokens) < max_tokens and sample_token != 0:
+        window = start_tokens[-WINDOW_SIZE:]
+        x = np.array([window])
+        y, _ = model.predict(x, verbose=0)
+
+        probs = y[0][-1][:len(vocab)]
+        probs = probs ** (1 / temperature)
+        probs = probs / np.sum(probs)
+        sample_token = np.random.choice(len(probs), p=probs)
+
+        start_tokens.append(sample_token)
+        word = vocab[sample_token]
+
+        if len(start_tokens) % 100 == 0:
+            print(f"  {len(start_tokens)} tokens...")
+        if len(start_tokens) <= 30:
+            print(f"  token: '{word}'")
+
+        if word == "<end>":
+            break
+
+        # Skip header tokens
+        if word in ("<start>", "<blocks>") or word.startswith("name=") or word.startswith("dim=") or word.startswith("tag="):
+            continue
+
+        # When we see a new m# token, start a fresh buffer
+        if word.startswith("m") and word[1:].isdigit():
+            block_buf = [word]
+        else:
+            block_buf.append(word)
+
+        # A complete block is: m# x# y# z# (4 tokens)
+        if len(block_buf) == 4 and block_buf[0].startswith("m") and block_buf[1].startswith("x") and block_buf[2].startswith("y") and block_buf[3].startswith("z"):
+            try:
+                mat_id = block_buf[0][1:]
+                bx = int(block_buf[1][1:])
+                by = int(block_buf[2][1:])
+                bz = int(block_buf[3][1:])
+                block_buf = []
+                block = {"mat_id": mat_id, "x": bx, "y": by, "z": bz}
+                print(f"  block: {block}")
+                yield block
+            except (ValueError, IndexError):
+                block_buf = []
+
+        # Reset buffer if it gets too long (malformed tokens)
+        if len(block_buf) > 8:
+            print(f"  dropping malformed: {block_buf}")
+            block_buf = []
+
+    print(f"Generated {len(start_tokens)} tokens")
+
+
+def generate_building(model, vocab, tokenizer, prompt, max_tokens=800, temperature=0.5):
+    """Generate a building using full context (no sliding window). Keep max_tokens <= 800 on M2."""
     word_to_index = {word: i for i, word in enumerate(vocab)}
 
     start_tokens = [word_to_index.get(x, 1) for x in prompt.split()]
@@ -93,7 +163,7 @@ def generate_building(model, vocab, tokenizer, prompt, max_tokens=4096, temperat
         x = np.array([start_tokens])
         y, _ = model.predict(x, verbose=0)
 
-        probs = y[0][-1]
+        probs = y[0][-1][:len(vocab)]
         probs = probs ** (1 / temperature)
         probs = probs / np.sum(probs)
         sample_token = np.random.choice(len(probs), p=probs)
@@ -102,7 +172,9 @@ def generate_building(model, vocab, tokenizer, prompt, max_tokens=4096, temperat
         word = vocab[sample_token]
         generated += " " + word
 
-        # Stop if we hit <end>
+        if len(start_tokens) % 100 == 0:
+            print(f"  {len(start_tokens)} tokens...")
+
         if word == "<end>":
             break
 
@@ -113,35 +185,61 @@ def generate_building(model, vocab, tokenizer, prompt, max_tokens=4096, temperat
 
 class Handler(BaseHTTPRequestHandler):
     def do_POST(self):
-        if self.path != "/generate":
+        if self.path == "/generate":
+            self._handle_generate()
+        elif self.path == "/generate/stream":
+            self._handle_stream()
+        else:
             self.send_error(404)
-            return
 
+    def _handle_generate(self):
+        """Original non-streaming endpoint."""
         content_length = int(self.headers.get("Content-Length", 0))
         body = json.loads(self.rfile.read(content_length)) if content_length else {}
 
         style = body.get("style", "house")
-        max_tokens = min(body.get("max_tokens", 4096), MAX_LEN)
-        temperature = body.get("temperature", 0.8)
-
-        # Build the prompt from the style
+        max_tokens = min(body.get("max_tokens", 800), 800)
+        temperature = body.get("temperature", 0.5)
         prompt = STYLE_PROMPTS.get(style, STYLE_PROMPTS["house"])
 
         print(f"Generating: style={style}, max_tokens={max_tokens}, temp={temperature}")
         building = generate_building(
-            self.server.model,
-            self.server.vocab,
-            self.server.tokenizer,
-            prompt,
-            max_tokens,
-            temperature,
+            self.server.model, self.server.vocab, self.server.tokenizer,
+            prompt, max_tokens, temperature,
         )
-
         response = json.dumps(building)
         self.send_response(200)
         self.send_header("Content-Type", "application/json")
         self.end_headers()
         self.wfile.write(response.encode())
+
+    def _handle_stream(self):
+        """Streaming endpoint — sends one JSON block per line as generated."""
+        content_length = int(self.headers.get("Content-Length", 0))
+        body = json.loads(self.rfile.read(content_length)) if content_length else {}
+
+        style = body.get("style", "house")
+        max_tokens = min(body.get("max_tokens", 4096), 4096)
+        temperature = body.get("temperature", 0.5)
+        prompt = STYLE_PROMPTS.get(style, STYLE_PROMPTS["house"])
+
+        print(f"Streaming: style={style}, max_tokens={max_tokens}, temp={temperature}")
+
+        self.send_response(200)
+        self.send_header("Content-Type", "application/x-ndjson")
+        self.send_header("Transfer-Encoding", "chunked")
+        self.end_headers()
+
+        count = 0
+        for block in generate_building_stream(
+            self.server.model, self.server.vocab, prompt, max_tokens, temperature,
+        ):
+            line = json.dumps(block) + "\n"
+            self.wfile.write(line.encode())
+            self.wfile.flush()
+            count += 1
+
+        print(f"Streamed {count} blocks")
 
     def do_GET(self):
         if self.path == "/health":
@@ -169,6 +267,12 @@ def main():
     server.model = model
     server.vocab = vocab
     server.tokenizer = tokenizer
+
+    # Warmup: compile the TF graph so first request isn't slow
+    print("Warming up model...")
+    dummy = np.array([[1, 2, 3]])
+    model.predict(dummy, verbose=0)
+    print("Ready!")
 
     print(f"AI server running on http://{HOST}:{PORT}")
     print(f"Endpoints:")

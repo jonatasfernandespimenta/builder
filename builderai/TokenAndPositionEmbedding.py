@@ -1,9 +1,12 @@
 from tensorflow.keras import layers, models, losses, callbacks
 import tensorflow as tf
+import keras
 
+
+@keras.saving.register_keras_serializable()
 class TokenAndPositionEmbedding(layers.Layer):
-    def __init__(self, max_len, vocab_size, embed_dim):
-        super(TokenAndPositionEmbedding, self).__init__()
+    def __init__(self, max_len, vocab_size, embed_dim, **kwargs):
+        super(TokenAndPositionEmbedding, self).__init__(**kwargs)
         self.max_len = max_len
         self.vocab_size = vocab_size
         self.embed_dim = embed_dim

@@ -3,8 +3,9 @@
 ============================================
 
 1. INSTALL PYTHON 3.12
-   Download from: https://www.python.org/downloads/
+   Download from: https://www.python.org/downloads/release/python-3129/
    IMPORTANT: Check "Add Python to PATH" during installation
+   NOTE: Python 3.13 does NOT work with TensorFlow
 
 2. INSTALL GIT (if you don't have it)
    Download from: https://git-scm.com/download/win
@@ -15,8 +16,9 @@
    git clone https://github.com/jonatasfernandespimenta/builder.git
    cd builder
 
-4. INSTALL TENSORFLOW
-   pip install tensorflow==2.16.2
+4. INSTALL DEPENDENCIES
+   cd builderai
+   pip install -r requirements.txt
 
 5. VERIFY GPU IS DETECTED
    python -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
@@ -28,24 +30,23 @@
    pip install nvidia-cudnn-cu12 nvidia-cuda-nvcc-cu12
 
 6. TRAIN THE MODEL
-   cd builderai
    python main.py
 
-   This will train for 50 epochs. With the RTX 3060 Ti it should take ~30-60 min.
-   You'll see generated text samples at the end of each epoch.
+   This will train for 50 epochs with 2,900 buildings.
+   With the RTX 3060 Ti it should take ~30-60 min.
 
-7. COPY THE TRAINED MODEL BACK
-   After training finishes, copy the folder:
-     builderai/models/gpt
-
-   Back to your Mac into the same location.
-   Use USB drive, Google Drive, or whatever works.
-
-8. RUN THE AI SERVER (on Mac after copying model back)
-   cd builderai
+7. RUN THE AI SERVER (on Windows)
    python server.py
 
-9. RUN THE BOT (separate terminal on Mac)
+   The server runs on port 5050.
+   Find your Windows IP: ipconfig (look for IPv4 Address)
+
+8. ON YOUR MAC - Update bot config
+   Edit builder-bot/config.json:
+   Change "aiServerUrl" from "http://localhost:5050"
+   to "http://<YOUR_WINDOWS_IP>:5050"
+
+9. ON YOUR MAC - Run the bot
    cd builder-bot
    npm install
    node index.js --ai
@@ -57,4 +58,5 @@
   so if it crashes you won't lose all progress.
 - If you get memory errors, reduce BATCH_SIZE in main.py (line 23)
   from 4 to 2.
-- The model trains on data.json which is already included in the repo.
+- The server generates full 4096-token buildings on the RTX 3060 Ti.
+- Make sure Windows Firewall allows port 5050 (or temporarily disable it).
