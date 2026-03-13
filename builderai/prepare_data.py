@@ -17,6 +17,7 @@ MAX_LEN = 4096
 HEADER_TOKENS = 4
 # Each block = 4 tokens (m# x# y# z#) + 1 for <end>
 INPUT_PATH = os.path.join(os.path.dirname(__file__), "..", "grabcraft-scrapper", "grabcraft_data.json")
+SCHEMATICS_PATH = os.path.join(os.path.dirname(__file__), "schematics_data.json")
 OUTPUT_PATH = os.path.join(os.path.dirname(__file__), "data.json")
 
 
@@ -84,6 +85,13 @@ def augment(building):
 def main():
     with open(INPUT_PATH) as f:
         raw = json.load(f)
+
+    # Also load schematics data if available
+    if os.path.exists(SCHEMATICS_PATH):
+        with open(SCHEMATICS_PATH) as f:
+            schematics = json.load(f)
+        print(f"Schematics buildings: {len(schematics)}")
+        raw.extend(schematics)
 
     print(f"Raw buildings: {len(raw)}")
 

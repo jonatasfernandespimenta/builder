@@ -27,4 +27,5 @@ mc-server/ops.json
 mc-server/whitelist.json
 
 # Scrapper data (large)
-grabcraft-scrapper/
+grabcraft-scrapper/grabcraft_data.json
+grabcraft-scrapper/schematics/
