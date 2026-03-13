@@ -1,0 +1,60 @@
+============================================
+  Builder AI - Windows Setup (RTX 3060 Ti)
+============================================
+
+1. INSTALL PYTHON 3.12
+   Download from: https://www.python.org/downloads/
+   IMPORTANT: Check "Add Python to PATH" during installation
+
+2. INSTALL GIT (if you don't have it)
+   Download from: https://git-scm.com/download/win
+
+3. CLONE THE REPO
+   Open Command Prompt or PowerShell:
+
+   git clone https://github.com/jonatasfernandespimenta/builder.git
+   cd builder
+
+4. INSTALL TENSORFLOW
+   pip install tensorflow==2.16.2
+
+5. VERIFY GPU IS DETECTED
+   python -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
+
+   You should see something like:
+   [PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
+
+   If GPU is NOT detected, install CUDA toolkit:
+   pip install nvidia-cudnn-cu12 nvidia-cuda-nvcc-cu12
+
+6. TRAIN THE MODEL
+   cd builderai
+   python main.py
+
+   This will train for 50 epochs. With the RTX 3060 Ti it should take ~30-60 min.
+   You'll see generated text samples at the end of each epoch.
+
+7. COPY THE TRAINED MODEL BACK
+   After training finishes, copy the folder:
+     builderai/models/gpt
+
+   Back to your Mac into the same location.
+   Use USB drive, Google Drive, or whatever works.
+
+8. RUN THE AI SERVER (on Mac after copying model back)
+   cd builderai
+   python server.py
+
+9. RUN THE BOT (separate terminal on Mac)
+   cd builder-bot
+   npm install
+   node index.js --ai
+
+============================================
+  NOTES
+============================================
+- Training saves checkpoints after each epoch in builderai/checkpoint/
+  so if it crashes you won't lose all progress.
+- If you get memory errors, reduce BATCH_SIZE in main.py (line 23)
+  from 4 to 2.
+- The model trains on data.json which is already included in the repo.
