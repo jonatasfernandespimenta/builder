@@ -26,8 +26,21 @@
    You should see something like:
    [PhysicalDevice(name='/physical_device:GPU:0', device_type='GPU')]
 
-   If GPU is NOT detected, install CUDA toolkit:
-   pip install nvidia-cudnn-cu12 nvidia-cuda-nvcc-cu12
+   If GPU is NOT detected, try these in order:
+
+   Option A:
+   pip install nvidia-cudnn-cu12==8.9.7.29 tensorflow[and-cuda]==2.16.2
+
+   Option B (if A doesn't work):
+   pip install tensorflow==2.16.2 nvidia-cuda-toolkit
+
+   Option C (if B doesn't work):
+   Install NVIDIA CUDA Toolkit 12.x from https://developer.nvidia.com/cuda-downloads
+   Make sure your NVIDIA GPU drivers are up to date.
+   Then reinstall tensorflow: pip install tensorflow==2.16.2
+
+   Verify again after each attempt:
+   python -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
 
 6. TRAIN THE MODEL
    python main.py
