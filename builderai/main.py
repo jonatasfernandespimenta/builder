@@ -5,23 +5,24 @@ import string
 from IPython.display import display, HTML
 import tensorflow as tf
 from tensorflow.keras import layers, models, losses, callbacks
-from Transformer import TransformerBlock
+from Transformer import TransformerBlock, TransformerStack
 from TokenAndPositionEmbedding import TokenAndPositionEmbedding
 from BuildingGenerator import BuildingGenerator
 
 from Tokenizer import Tokenizer
 
 VOCAB_SIZE = 10000
-MAX_LEN = 4096
+MAX_LEN = 8192
 EMBEDDING_DIM = 256
 KEY_DIM = 256
-N_HEADS = 4
-FEED_FORWARD_DIM = 512
+N_HEADS = 8
+FEED_FORWARD_DIM = 1024
+N_LAYERS = 4
 VALIDATION_SPLIT = 0.2
 SEED = 42
 LOAD_MODEL = False
-BATCH_SIZE = 4
-EPOCHS = 50
+BATCH_SIZE = 8
+EPOCHS = 100
 
 tokenizer = Tokenizer()
 
@@ -54,7 +55,23 @@ def prepare_inputs(text):
     return x, y
 
 
-train_ds = text_ds.map(prepare_inputs)
+total_samples = len(tokenizedData)
+val_size = int(total_samples * VALIDATION_SPLIT)
+train_data = tokenizedData[val_size:]
+val_data = tokenizedData[:val_size]
+
+train_ds = (
+    tf.data.Dataset.from_tensor_slices(train_data)
+    .batch(BATCH_SIZE)
+    .shuffle(1000)
+    .map(prepare_inputs)
+)
+
+val_ds = (
+    tf.data.Dataset.from_tensor_slices(val_data)
+    .batch(BATCH_SIZE)
+    .map(prepare_inputs)
+)
 
 def causal_attention_mask(batch_size, n_dest, n_src, dtype):
     i = tf.range(n_dest)[:, None]
@@ -70,14 +87,35 @@ def causal_attention_mask(batch_size, n_dest, n_src, dtype):
 
 np.transpose(causal_attention_mask(1, 10, 10, dtype=tf.int32)[0])
 
+class WarmupCosineDecay(tf.keras.optimizers.schedules.LearningRateSchedule):
+    def __init__(self, base_lr, warmup_steps, total_steps):
+        self.base_lr = base_lr
+        self.warmup_steps = warmup_steps
+        self.total_steps = total_steps
+
+    def __call__(self, step):
+        step = tf.cast(step, tf.float32)
+        warmup = tf.minimum(step / self.warmup_steps, 1.0)
+        cosine = 0.5 * (1 + tf.cos(3.14159 * step / self.total_steps))
+        return self.base_lr * warmup * cosine
+
+lr_schedule = WarmupCosineDecay(
+    base_lr=1e-3,
+    warmup_steps=1000,
+    total_steps=EPOCHS * len(train_data) // BATCH_SIZE,
+)
+
 inputs = layers.Input(shape=(None,), dtype=tf.int32)
 x = TokenAndPositionEmbedding(MAX_LEN, VOCAB_SIZE, EMBEDDING_DIM)(inputs)
-x, attention_scores = TransformerBlock(
-    N_HEADS, KEY_DIM, EMBEDDING_DIM, FEED_FORWARD_DIM
+x, attention_scores = TransformerStack(
+    N_LAYERS, N_HEADS, KEY_DIM, EMBEDDING_DIM, FEED_FORWARD_DIM
 )(x)
 outputs = layers.Dense(VOCAB_SIZE, activation="softmax")(x)
 gpt = models.Model(inputs=inputs, outputs=[outputs, attention_scores])
-gpt.compile("adam", loss=[losses.SparseCategoricalCrossentropy(), None])
+gpt.compile(
+    tf.keras.optimizers.Adam(learning_rate=lr_schedule),
+    loss=[losses.SparseCategoricalCrossentropy(), None],
+)
 
 if LOAD_MODEL:
     # model.load_weights('./models/model')
@@ -92,13 +130,20 @@ model_checkpoint_callback = callbacks.ModelCheckpoint(
 
 tensorboard_callback = callbacks.TensorBoard(log_dir="./logs")
 
+early_stopping_callback = callbacks.EarlyStopping(
+    monitor="val_loss",
+    patience=10,
+    restore_best_weights=True,
+)
+
 # Tokenize starting prompt
 text_generator = BuildingGenerator(vocab)
 
 gpt.fit(
     train_ds,
     epochs=EPOCHS,
-    callbacks=[model_checkpoint_callback, tensorboard_callback, text_generator],
+    validation_data=val_ds,
+    callbacks=[model_checkpoint_callback, tensorboard_callback, text_generator, early_stopping_callback],
 )
 gpt.save("./models/gpt.keras")
 

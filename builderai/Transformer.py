@@ -16,7 +16,7 @@ def causal_attention_mask(batch_size, n_dest, n_src, dtype):
 
 @keras.saving.register_keras_serializable()
 class TransformerBlock(layers.Layer):
-    def __init__(self, num_heads, key_dim, embed_dim, ff_dim, dropout_rate=0.1, **kwargs):
+    def __init__(self, num_heads, key_dim, embed_dim, ff_dim, dropout_rate=0.25, **kwargs):
         super(TransformerBlock, self).__init__(**kwargs)
         self.num_heads = num_heads
         self.key_dim = key_dim
@@ -28,7 +28,7 @@ class TransformerBlock(layers.Layer):
         )
         self.dropout_1 = layers.Dropout(self.dropout_rate)
         self.ln_1 = layers.LayerNormalization(epsilon=1e-6)
-        self.ffn_1 = layers.Dense(self.ff_dim, activation="relu")
+        self.ffn_1 = layers.Dense(self.ff_dim, activation="gelu")
         self.ffn_2 = layers.Dense(self.embed_dim)
         self.dropout_2 = layers.Dropout(self.dropout_rate)
         self.ln_2 = layers.LayerNormalization(epsilon=1e-6)
@@ -60,6 +60,43 @@ class TransformerBlock(layers.Layer):
                 "key_dim": self.key_dim,
                 "embed_dim": self.embed_dim,
                 "num_heads": self.num_heads,
+                "ff_dim": self.ff_dim,
+                "dropout_rate": self.dropout_rate,
+            }
+        )
+        return config
+
+
+@keras.saving.register_keras_serializable()
+class TransformerStack(layers.Layer):
+    def __init__(self, num_layers, num_heads, key_dim, embed_dim, ff_dim, dropout_rate=0.25, **kwargs):
+        super(TransformerStack, self).__init__(**kwargs)
+        self.num_layers = num_layers
+        self.num_heads = num_heads
+        self.key_dim = key_dim
+        self.embed_dim = embed_dim
+        self.ff_dim = ff_dim
+        self.dropout_rate = dropout_rate
+        self.blocks = [
+            TransformerBlock(num_heads, key_dim, embed_dim, ff_dim, dropout_rate)
+            for _ in range(num_layers)
+        ]
+
+    def call(self, inputs):
+        x = inputs
+        attention_scores = None
+        for block in self.blocks:
+            x, attention_scores = block(x)
+        return x, attention_scores
+
+    def get_config(self):
+        config = super().get_config()
+        config.update(
+            {
+                "num_layers": self.num_layers,
+                "num_heads": self.num_heads,
+                "key_dim": self.key_dim,
+                "embed_dim": self.embed_dim,
                 "ff_dim": self.ff_dim,
                 "dropout_rate": self.dropout_rate,
             }

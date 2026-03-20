@@ -1,7 +1,8 @@
 """
 Prepares data.json from the raw grabcraft_data.json.
+- Filters buildings exceeding MAX_BLOCKS
 - Truncates large buildings to fit MAX_LEN instead of discarding them
-- Augments data with rotations and mirrors (up to 4x)
+- Augments data with rotations and mirrors (8x)
 """
 
 import json
@@ -12,7 +13,8 @@ import os
 sys.path.insert(0, os.path.dirname(__file__))
 from Tokenizer import Tokenizer
 
-MAX_LEN = 4096
+MAX_LEN = 8192
+MAX_BLOCKS = 1500
 # Header tokens: <start> name= dim= <blocks> ... <end> = ~4 tokens overhead
 HEADER_TOKENS = 4
 # Each block = 4 tokens (m# x# y# z#) + 1 for <end>
@@ -57,6 +59,15 @@ def mirror_x(building):
     return b
 
 
+def mirror_z(building):
+    """Mirror building along Z axis: z -> -z."""
+    b = copy.deepcopy(building)
+    for block in b["blocks"]:
+        block["z"] = -block["z"]
+    _normalize(b)
+    return b
+
+
 def _normalize(building):
     """Shift all block coordinates so minimums are 1."""
     blocks = building["blocks"]
@@ -72,13 +83,16 @@ def _normalize(building):
 
 
 def augment(building):
-    """Return original + 3 rotations. Each also gets a mirror = 8x total,
-    but we do 4x (original + rotations) to keep it reasonable."""
-    variants = [building]
+    """Return original + 3 rotations, each with its mirror = 8x total."""
+    rotations = [building]
     rotated = building
     for _ in range(3):
         rotated = rotate_90(rotated)
-        variants.append(rotated)
+        rotations.append(rotated)
+    variants = []
+    for r in rotations:
+        variants.append(r)
+        variants.append(mirror_x(r))
     return variants
 
 
@@ -94,6 +108,12 @@ def main():
         raw.extend(schematics)
 
     print(f"Raw buildings: {len(raw)}")
+
+    # Filter buildings with too many blocks
+    before_filter = len(raw)
+    raw = [b for b in raw if len(b.get("blocks", [])) <= MAX_BLOCKS]
+    filtered_out = before_filter - len(raw)
+    print(f"Filtered out (>{MAX_BLOCKS} blocks): {filtered_out}")
 
     tokenizer = Tokenizer()
     clean = []
@@ -122,13 +142,30 @@ def main():
     for b in clean:
         augmented.extend(augment(b))
 
-    print(f"After augmentation (4x rotations): {len(augmented)}")
+    print(f"After augmentation (8x rotations+mirrors): {len(augmented)}")
 
     # Show stats
     counts = [tokenizer.token_count(b) for b in augmented]
     counts.sort()
     print(f"Token range: {counts[0]} - {counts[-1]}")
     print(f"Median tokens: {counts[len(counts)//2]}")
+
+    # Token count distribution
+    buckets = {"0-1000": 0, "1000-2000": 0, "2000-4000": 0, "4000-8000": 0, "8000+": 0}
+    for c in counts:
+        if c < 1000:
+            buckets["0-1000"] += 1
+        elif c < 2000:
+            buckets["1000-2000"] += 1
+        elif c < 4000:
+            buckets["2000-4000"] += 1
+        elif c < 8000:
+            buckets["4000-8000"] += 1
+        else:
+            buckets["8000+"] += 1
+    print("Token distribution:")
+    for bucket, count in buckets.items():
+        print(f"  {bucket}: {count}")
 
     # Show some examples
     print("\nSample buildings:")
