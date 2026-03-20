@@ -12,7 +12,7 @@ from BuildingGenerator import BuildingGenerator
 from Tokenizer import Tokenizer
 
 VOCAB_SIZE = 10000
-MAX_LEN = 8192
+MAX_LEN = 4096
 EMBEDDING_DIM = 256
 KEY_DIM = 256
 N_HEADS = 8
@@ -21,7 +21,8 @@ N_LAYERS = 4
 VALIDATION_SPLIT = 0.2
 SEED = 42
 LOAD_MODEL = False
-BATCH_SIZE = 8
+BATCH_SIZE = 2
+ACCUM_STEPS = 4  # Gradient accumulation: effective batch = BATCH_SIZE * ACCUM_STEPS = 8
 EPOCHS = 100
 
 tokenizer = Tokenizer()
@@ -99,6 +100,13 @@ class WarmupCosineDecay(tf.keras.optimizers.schedules.LearningRateSchedule):
         cosine = 0.5 * (1 + tf.cos(3.14159 * step / self.total_steps))
         return self.base_lr * warmup * cosine
 
+    def get_config(self):
+        return {
+            "base_lr": self.base_lr,
+            "warmup_steps": self.warmup_steps,
+            "total_steps": self.total_steps,
+        }
+
 lr_schedule = WarmupCosineDecay(
     base_lr=1e-3,
     warmup_steps=1000,
@@ -112,39 +120,94 @@ x, attention_scores = TransformerStack(
 )(x)
 outputs = layers.Dense(VOCAB_SIZE, activation="softmax")(x)
 gpt = models.Model(inputs=inputs, outputs=[outputs, attention_scores])
-gpt.compile(
-    tf.keras.optimizers.Adam(learning_rate=lr_schedule),
-    loss=[losses.SparseCategoricalCrossentropy(), None],
-)
+
+optimizer = tf.keras.optimizers.Adam(learning_rate=lr_schedule)
+loss_fn = losses.SparseCategoricalCrossentropy()
 
 if LOAD_MODEL:
-    # model.load_weights('./models/model')
     gpt = models.load_model("./models/gpt.keras", compile=True)
-
-model_checkpoint_callback = callbacks.ModelCheckpoint(
-    filepath="./checkpoint/checkpoint.weights.h5",
-    save_weights_only=True,
-    save_freq="epoch",
-    verbose=0,
-)
-
-tensorboard_callback = callbacks.TensorBoard(log_dir="./logs")
-
-early_stopping_callback = callbacks.EarlyStopping(
-    monitor="val_loss",
-    patience=10,
-    restore_best_weights=True,
-)
 
 # Tokenize starting prompt
 text_generator = BuildingGenerator(vocab)
 
-gpt.fit(
-    train_ds,
-    epochs=EPOCHS,
-    validation_data=val_ds,
-    callbacks=[model_checkpoint_callback, tensorboard_callback, text_generator, early_stopping_callback],
-)
+# --- Custom training loop with gradient accumulation ---
+train_summary_writer = tf.summary.create_file_writer("./logs/train")
+val_summary_writer = tf.summary.create_file_writer("./logs/val")
+
+best_val_loss = float("inf")
+patience_counter = 0
+PATIENCE = 10
+best_weights = None
+
+for epoch in range(EPOCHS):
+    print(f"\nEpoch {epoch + 1}/{EPOCHS}")
+
+    # --- Training ---
+    epoch_loss = tf.keras.metrics.Mean()
+    accum_gradients = [tf.zeros_like(v) for v in gpt.trainable_variables]
+    step_in_accum = 0
+
+    for step, (x_batch, y_batch) in enumerate(train_ds):
+        with tf.GradientTape() as tape:
+            preds, _ = gpt(x_batch, training=True)
+            loss = loss_fn(y_batch, preds)
+            scaled_loss = loss / ACCUM_STEPS
+
+        grads = tape.gradient(scaled_loss, gpt.trainable_variables)
+        accum_gradients = [a + g for a, g in zip(accum_gradients, grads)]
+        step_in_accum += 1
+
+        if step_in_accum == ACCUM_STEPS:
+            optimizer.apply_gradients(zip(accum_gradients, gpt.trainable_variables))
+            accum_gradients = [tf.zeros_like(v) for v in gpt.trainable_variables]
+            step_in_accum = 0
+
+        epoch_loss.update_state(loss)
+
+    # Apply remaining accumulated gradients
+    if step_in_accum > 0:
+        optimizer.apply_gradients(zip(accum_gradients, gpt.trainable_variables))
+
+    train_loss = epoch_loss.result().numpy()
+
+    # --- Validation ---
+    val_loss_metric = tf.keras.metrics.Mean()
+    for x_batch, y_batch in val_ds:
+        preds, _ = gpt(x_batch, training=False)
+        val_loss_metric.update_state(loss_fn(y_batch, preds))
+
+    val_loss = val_loss_metric.result().numpy()
+
+    print(f"  train_loss: {train_loss:.4f} - val_loss: {val_loss:.4f}")
+
+    # TensorBoard logging
+    with train_summary_writer.as_default():
+        tf.summary.scalar("loss", train_loss, step=epoch)
+    with val_summary_writer.as_default():
+        tf.summary.scalar("loss", val_loss, step=epoch)
+
+    # Early stopping
+    if val_loss < best_val_loss:
+        best_val_loss = val_loss
+        patience_counter = 0
+        best_weights = gpt.get_weights()
+        gpt.save_weights("./checkpoint/checkpoint.weights.h5")
+    else:
+        patience_counter += 1
+        if patience_counter >= PATIENCE:
+            print(f"  Early stopping at epoch {epoch + 1}")
+            break
+
+    # Generate sample building each epoch
+    text_generator.model = gpt
+    text_generator.on_epoch_end(epoch)
+
+# Restore best weights
+if best_weights is not None:
+    gpt.set_weights(best_weights)
+
+# Save with compile for easy reloading
+gpt.compile(optimizer, loss=[loss_fn, None])
 gpt.save("./models/gpt.keras")
 
 def print_probs(info, vocab, top_k=5):

@@ -18,6 +18,14 @@ class TokenAndPositionEmbedding(layers.Layer):
         self.y_emb = layers.Embedding(input_dim=max_coord, output_dim=embed_dim)
         self.z_emb = layers.Embedding(input_dim=max_coord, output_dim=embed_dim)
 
+    def build(self, input_shape):
+        self.token_emb.build(input_shape)
+        self.pos_emb.build(input_shape)
+        self.x_emb.build(input_shape)
+        self.y_emb.build(input_shape)
+        self.z_emb.build(input_shape)
+        super().build(input_shape)
+
     def call(self, x, spatial_coords=None):
         """
         Args:

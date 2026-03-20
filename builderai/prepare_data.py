@@ -13,8 +13,8 @@ import os
 sys.path.insert(0, os.path.dirname(__file__))
 from Tokenizer import Tokenizer
 
-MAX_LEN = 8192
-MAX_BLOCKS = 1500
+MAX_LEN = 4096
+MAX_BLOCKS = 1000
 # Header tokens: <start> name= dim= <blocks> ... <end> = ~4 tokens overhead
 HEADER_TOKENS = 4
 # Each block = 4 tokens (m# x# y# z#) + 1 for <end>
