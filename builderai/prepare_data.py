@@ -23,6 +23,13 @@ SCHEMATICS_PATH = os.path.join(os.path.dirname(__file__), "schematics_data.json"
 OUTPUT_PATH = os.path.join(os.path.dirname(__file__), "data.json")
 
 
+def sort_blocks_spatially(building):
+    """Sort blocks by y (bottom-up), then x, then z for spatial locality."""
+    b = copy.deepcopy(building)
+    b["blocks"] = sorted(b["blocks"], key=lambda bl: (bl["y"], bl["x"], bl["z"]))
+    return b
+
+
 def truncate_building(building, max_len):
     """Truncate blocks to fit within max_len tokens."""
     tags_count = len(building.get("tags", []))
@@ -136,6 +143,10 @@ def main():
     print(f"Skipped (empty/broken): {skipped_empty}")
     print(f"Truncated to fit {MAX_LEN}: {truncated}")
     print(f"Base buildings: {len(clean)}")
+
+    # Sort blocks spatially for better sequence locality
+    clean = [sort_blocks_spatially(b) for b in clean]
+    print("Applied spatial ordering (y → x → z)")
 
     # Augment with rotations
     augmented = []
